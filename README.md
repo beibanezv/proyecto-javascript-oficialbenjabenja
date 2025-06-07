@@ -6,4 +6,4 @@ Link de Github Pages: https://beibanezv.github.io/proyecto-javascript-oficialben
 Al abrir un articulo ![image](https://github.com/user-attachments/assets/dfd25033-7e7d-479c-bd2b-5f0c5984a15a)
 todo el catalogo de articulos actual ![image](https://github.com/user-attachments/assets/eb69dbb7-5277-4efe-adcb-1b2dd7ae02b4)
 formulario de contacto para comunicarse con nosotros ![image](https://github.com/user-attachments/assets/81635934-f0b0-45f8-afa3-78636497df22)
-Enlace al despliegue: 
+Enlace al despliegue: https://proyecto-javascript-oficialbenjaben.vercel.app/detalles.html

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - PetBlog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen">
+    <!-- Navegación Principal -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-paw text-3xl text-purple-600"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">PetBlog</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-purple-600 transition-colors">Inicio</a>
+                    <a href="articulos.html" class="text-gray-600 hover:text-purple-600 transition-colors">Artículos</a>
+                    <a href="contacto.html"
+                        class="text-purple-600 font-semibold border-b-2 border-purple-600">Contacto</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div id="info-favoritos" class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
+                        <i class="fas fa-heart"></i>
+                        <span id="contador-favoritos">0</span>
+                    </div>
+                    <button id="boton-menu-movil" class="md:hidden text-gray-600">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Menú Móvil -->
+            <div id="menu-movil" class="md:hidden hidden pb-4 border-t">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-purple-600">Inicio</a>
+                <a href="articulos.html" class="block py-2 text-gray-600 hover:text-purple-600">Artículos</a>
+                <a href="contacto.html" class="block py-2 text-purple-600 font-semibold">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de la Página -->
+    <section class="bg-gradient-to-r from-pink-600 to-purple-600 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-4">¡Contáctanos!</h2>
+            <p class="text-xl text-center text-pink-100">Estamos aquí para ayudarte con cualquier duda sobre tu mascota
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección Principal de Contacto -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- Formulario de Contacto -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h3>
+
+                    <form id="formulario-contacto" class="space-y-6">
+                        <!-- Nombre Completo -->
+                        <div>
+                            <label for="nombre-completo" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nombre Completo *
+                            </label>
+                            <input type="text" id="nombre-completo" name="nombreCompleto"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                                placeholder="Tu nombre completo" required>
+                            <div id="error-nombre" class="text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email-contacto" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Correo Electrónico *
+                            </label>
+                            <input type="email" id="email-contacto" name="emailContacto"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                                placeholder="tu@email.com" required>
+                            <div id="error-email" class="text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div>
+                            <label for="telefono-contacto" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Teléfono (Opcional)
+                            </label>
+                            <input type="tel" id="telefono-contacto" name="telefonoContacto"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                                placeholder="+56 9 4355 6546">
+                        </div>
+
+                        <!-- Tipo de Mascota -->
+                        <div>
+                            <label for="tipo-mascota" class="block text-sm font-semibold text-gray-700 mb-2">
+                                ¿Qué tipo de mascota tienes? *
+                            </label>
+                            <select id="tipo-mascota" name="tipoMascota"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                                required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="perro">Perro 🐕</option>
+                                <option value="gato">Gato 🐱</option>
+                                <option value="ave">Ave 🐦</option>
+                                <option value="pez">Pez 🐠</option>
+                                <option value="conejo">Conejo 🐰</option>
+                                <option value="hamster">Hámster 🐹</option>
+                                <option value="exotica">Mascota Exótica 🦎</option>
+                                <option value="no-tengo">No tengo mascota</option>
+                                <option value="multiple">Tengo varias</option>
+                            </select>
+                            <div id="error-tipomascota" class="text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+
+                        <!-- Motivo de Contacto -->
+                        <div>
+                            <label for="motivo-contacto" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Motivo de tu Consulta *
+                            </label>
+                            <select id="motivo-contacto" name="motivoContacto"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                                required>
+                                <option value="">Selecciona el motivo</option>
+                                <option value="consulta-general">Consulta General</option>
+                                <option value="consejos-salud">Consejos de Salud</option>
+                                <option value="problemas-comportamiento">Problemas de Comportamiento</option>
+                                <option value="alimentacion">Alimentación</option>
+                                <option value="sugerencia-articulo">Sugerencia para Artículo</option>
+                                <option value="colaboracion">Propuesta de Colaboración</option>
+                                <option value="problema-tecnico">Problema Técnico del Sitio</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <div id="error-motivo" class="text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div>
+                            <label for="mensaje-contacto" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Tu Mensaje *
+                            </label>
+                            <textarea id="mensaje-contacto" name="mensajeContacto" rows="5"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-200"
+                                placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                            <div id="error-mensaje" class="text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+
+                        <!-- Términos y Condiciones -->
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="terminos" name="terminos"
+                                class="mt-1 w-4 h-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500" required>
+                            <label for="terminos" class="text-sm text-gray-600">
+                                Acepto los <a href="#" class="text-purple-600 hover:underline">términos y condiciones</a> 
+                                y la <a href="#" class="text-purple-600 hover:underline">política de privacidad</a> *
+                            </label>
+                        </div>
+                        <div id="error-terminos" class="text-red-500 text-sm mt-1 hidden"></div>
+
+                        <!-- Botón de Envío -->
+                        <button type="submit"
+                            class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+
+                    <!-- Mensaje de Confirmación -->
+                    <div id="mensaje-confirmacion" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        ¡Gracias por tu mensaje! Te responderemos en las próximas 24 horas.
+                    </div>
+                </div>
+
+                <!-- Información de Contacto -->
+                <div class="space-y-8">
+                    <!-- Información Principal -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Información de Contacto</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-purple-100 p-3 rounded-full">
+                                    <i class="fas fa-envelope text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">contacto@petblog.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-purple-100 p-3 rounded-full">
+                                    <i class="fas fa-phone text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Teléfono</h4>
+                                    <p class="text-gray-600">+56 9 8765 4321</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-purple-100 p-3 rounded-full">
+                                    <i class="fas fa-map-marker-alt text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Dirección</h4>
+                                    <p class="text-gray-600">Av. Veterinaria 123, Concepción, Chile</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-purple-100 p-3 rounded-full">
+                                    <i class="fas fa-clock text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Horario de Atención</h4>
+                                    <p class="text-gray-600">Lunes a Viernes: 9:00 - 18:00</p>
+                                    <p class="text-gray-600">Sábados: 9:00 - 14:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes Sociales -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Síguenos</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors">
+                                <i class="fab fa-facebook text-2xl text-blue-600"></i>
+                                <span class="text-gray-700">Facebook</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-pink-50 hover:bg-pink-100 transition-colors">
+                                <i class="fab fa-instagram text-2xl text-pink-600"></i>
+                                <span class="text-gray-700">Instagram</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors">
+                                <i class="fab fa-twitter text-2xl text-blue-400"></i>
+                                <span class="text-gray-700">Twitter</span>
+                            </a>
+                            
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-red-50 hover:bg-red-100 transition-colors">
+                                <i class="fab fa-youtube text-2xl text-red-600"></i>
+                                <span class="text-gray-700">YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Rápidas -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Preguntas Frecuentes</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="border-b border-gray-200 pb-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">¿Cuánto demoran en responder?</h4>
+                                <p class="text-gray-600 text-sm">Respondemos todos los mensajes en menos de 24 horas durante días hábiles.</p>
+                            </div>
+                            
+                            <div class="border-b border-gray-200 pb-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">¿Pueden dar consejos veterinarios?</h4>
+                                <p class="text-gray-600 text-sm">Proporcionamos información general, pero siempre recomendamos consultar con un veterinario.</p>
+                            </div>
+                            
+                            <div class="border-b border-gray-200 pb-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">¿Aceptan colaboraciones?</h4>
+                                <p class="text-gray-600 text-sm">¡Sí! Nos encanta colaborar con veterinarios y expertos en mascotas.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">¿Hay costo por la consulta?</h4>
+                                <p class="text-gray-600 text-sm">Todas nuestras consultas por email son completamente gratuitas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de Ubicación -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">Nuestra Ubicación</h3>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="bg-gradient-to-r from-purple-400 to-pink-400 h-64 rounded-lg flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <i class="fas fa-map-marker-alt text-4xl mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">Concepción, Chile</h4>
+                        <p class="text-lg">Av. Veterinaria 123</p>
+                        <p class="text-sm opacity-75">Región del Biobío</p>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600 mb-4">Visítanos en nuestras oficinas o contáctanos para programar una cita</p>
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-directions mr-2"></i>Cómo llegar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <div class="flex justify-center space-x-6 mb-4">
+                    <i class="fab fa-facebook text-2xl hover:text-blue-400 cursor-pointer transition-colors"></i>
+                    <i class="fab fa-instagram text-2xl hover:text-pink-400 cursor-pointer transition-colors"></i>
+                    <i class="fab fa-twitter text-2xl hover:text-blue-300 cursor-pointer transition-colors"></i>
+                    <i class="fab fa-youtube text-2xl hover:text-red-400 cursor-pointer transition-colors"></i>
+                </div>
+                <p class="text-gray-400">&copy; 2024 PetBlog. Todos los derechos reservados.</p>
+                <p class="text-gray-500 text-sm mt-2">Hecho con ❤️ para los amantes de las mascotas</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
